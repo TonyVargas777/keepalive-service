@@ -21,7 +21,7 @@ const keepAlive = () => {
     .catch((err) => console.error("Error al enviar la solicitud:", err));
 };
 
-// Ejecutar el keepAlive cada 10 minutos
+// Ejecutar el keepAlive cada 10 minutos 
 setInterval(keepAlive, 10 * 60 * 1000);
 
 // Llamar al menos una vez al iniciar
