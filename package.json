@@ -1,13 +1,16 @@
 {
   "name": "keepalive-service",
   "version": "1.0.0",
-  "description": "Keepalive service to ping backend.",
-  "main": "keepalive.cjs",
+  "description": "Servicio de keepalive para mantener activo el backend",
+  "main": "keepalive.mjs",
+  "type": "module",
   "scripts": {
-    "start": "node keepalive.cjs"
+    "start": "node keepalive.mjs"
   },
   "dependencies": {
-    "node-fetch": "^3.2.6"
+    "node-fetch": "^3.3.1"
   },
-  "type": "commonjs" 
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
