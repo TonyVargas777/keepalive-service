@@ -1,5 +1,5 @@
-import fetch from "node-fetch"; // Importa fetch directamente
-import http from 'http'; // Importa http
+const fetch = require("node-fetch");
+const http = require('http');
 
 const PORT = process.env.PORT || 3900; // Elige el puerto que quieras usar
 
