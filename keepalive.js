@@ -1,5 +1,18 @@
 import fetch from "node-fetch";
 
+const http = require('http');
+
+const PORT = process.env.PORT || 3900; // Elige el puerto que quieras usar
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Backend is active');
+});
+
+server.listen(PORT, () => {
+  console.log(`Keepalive service is running on port ${PORT}`);
+});
+
 const url = "https://basedatosrender.onrender.com"; // Reemplaza con la URL de tu backend
 
 const keepAlive = () => {
