@@ -1,5 +1,5 @@
 const http = require('http');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch'); // Usa require para node-fetch
 
 const PORT = process.env.PORT || 3900; // Elige el puerto que quieras usar
 
@@ -21,7 +21,7 @@ const keepAlive = () => {
     .catch((err) => console.error("Error al enviar la solicitud:", err));
 };
 
-// Ejecutar el keepAlive cada 10 minutos 
+// Ejecutar el keepAlive cada 10 minutos
 setInterval(keepAlive, 10 * 60 * 1000);
 
 // Llamar al menos una vez al iniciar
