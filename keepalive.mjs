@@ -27,8 +27,20 @@ const keepAlive = async () => {
     }
 };
 
-// Llamar a la función cada 5 minutos
-setInterval(keepAlive, 5 * 60 * 1000);
+// Función que ejecuta keepAlive solo entre las 06:00 y las 22:00
+const keepAliveIfWithinTimeRange = () => {
+    const now = new Date();
+    const hour = now.getHours();
+
+    if (hour >= 6 && hour < 22) {
+        keepAlive();
+    } else {
+        console.log('Fuera del horario permitido, no se envía keepAlive.');
+    }
+};
+
+// Llamar a la función cada 5 minutos dentro del horario establecido
+setInterval(keepAliveIfWithinTimeRange, 5 * 60 * 1000);
 
 app.listen(PORT, () => {
     console.log(`Keepalive service started on port ${PORT}`);
