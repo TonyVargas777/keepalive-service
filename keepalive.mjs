@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 // Lista de URLs de las bases de datos o servicios que deseas mantener activos
 const urls = [
     'https://basedatosrender.onrender.com',
-    'https://los-juegos-de-mi-vida.onrender.com'
+    'https://pac1juegos-production.up.railway.app/'
 ];
 
 // Función para enviar solicitudes periódicas a todas las URLs
@@ -27,20 +27,13 @@ const keepAlive = async () => {
     }
 };
 
-// Función que ejecuta keepAlive solo entre las 06:00 y las 22:00
-const keepAliveIfWithinTimeRange = () => {
-    const now = new Date();
-    const hour = now.getHours();
-
-    if (hour >= 6 && hour < 22) {
-        keepAlive();
-    } else {
-        console.log('Fuera del horario permitido, no se envía keepAlive.');
-    }
+// Función que ejecuta keepAlive sin restricciones horarias
+const keepAliveWithoutRestrictions = () => {
+    keepAlive();
 };
 
-// Llamar a la función cada 5 minutos dentro del horario establecido
-setInterval(keepAliveIfWithinTimeRange, 5 * 60 * 1000);
+// Llamar a la función cada 5 minutos sin restricciones
+setInterval(keepAliveWithoutRestrictions, 5 * 60 * 1000);
 
 app.listen(PORT, () => {
     console.log(`Keepalive service started on port ${PORT}`);
