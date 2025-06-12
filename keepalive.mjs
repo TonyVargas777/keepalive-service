@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 // Lista de URLs de las bases de datos o servicios que deseas mantener activos
 const urls = [
     'https://basedatosrender.onrender.com',
-    'https://pac1juegos-production.up.railway.app/'
+    // 'https://pac1juegos-production.up.railway.app/'
 ];
 
 // Función para enviar solicitudes periódicas a todas las URLs
